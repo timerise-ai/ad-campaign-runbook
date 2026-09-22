@@ -1,7 +1,7 @@
 # Inputs and the placeholder table
 
-One input is required and cannot be defaulted. Everything else has a default or is
-discovered by the host probe.
+One input is required and cannot be defaulted. Everything else has a default or is discovered by the host
+probe.
 
 ## The required parameter: the blog post
 
@@ -12,27 +12,24 @@ discovered by the host probe.
 | A post under 300 words: stop and say so | Five distinct ad angles, each traceable to a sentence, do not exist in a short post |
 | A URL instead of a file: ask for the file | Claims must be traced to the source text, not to a rendered page that may differ |
 
-Run the preflight first. It enforces the rule and returns the facts the runbook is
-built from:
+Run the preflight first. It enforces the rule and returns the facts the runbook is built from:
 
 ```bash
-python3 <skill-dir>/scripts/preflight.py <post.md> --cta <conversion path> --site <https://site>
+python3 <skill-dir>/assets/preflight.py <post.md> --cta <conversion path> --site <https://site>
 ```
 
-Exit code `2` means stop. Show the user the `error` string and ask for the post.
-Exit code `0` prints JSON: title, slug, URL, word count, H2 sections, image count,
-internal links, how many times the post links to the conversion path and **at which
-word the first such link appears**. Warnings in that JSON go into the runbook's
+Exit code `2` means stop. Show the user the `error` string and ask for the post. Exit code `0` prints JSON:
+title, slug, URL, word count, H2 sections, image count, internal links, how many times the post links to the
+conversion path and **at which word the first such link appears**. Warnings in that JSON go into the runbook's
 landing page section verbatim; they are usually the cheapest wins in the whole plan.
 
-`--cta` and `--site` are optional on the first run. Run it once without them to
-validate the post, do the host probe to learn the conversion path, then run it again
-with both.
+`--cta` and `--site` are optional on the first run. Run it once without them to validate the post, do the host
+probe to learn the conversion path, then run it again with both.
 
 ## Inputs to ask for
 
-Ask in one batch, after the preflight and the host probe, so the questions can quote
-what was found. Skip any the user already gave.
+Ask in one batch, after the preflight and the host probe, so the questions can quote what was found. Skip any
+the user already gave.
 
 | Input | Ask | Default if the user declines |
 | :-- | :-- | :-- |
@@ -43,34 +40,33 @@ what was found. Skip any the user already gave.
 | Ad account | "Does an ad account exist? Its currency?" | Assume none; the runbook's preflight section covers creating one. The account currency is permanent, so it must match the budget currency |
 | Acceptable cost per qualified conversion | "What may one qualified conversion cost?" | Left as a pre-launch checklist item for Sales |
 
-Never ask for ad account credentials, and never sign in on the user's behalf. If the
-user offers a signed-in browser session, reading the account is fine; creating or
-changing anything in it needs an explicit yes for that action.
+Never ask for ad account credentials, and never sign in on the user's behalf. If the user offers a signed-in
+browser session, reading the account is fine; creating or changing anything in it needs an explicit yes for
+that action.
 
 ## Placeholders
 
-Every `{{NAME}}` in [runbook-template.md](runbook-template.md) is defined here. A
-placeholder left in a finished runbook is a defect: the verification step greps for
-`{{`.
+Every `{{NAME}}` in [runbook-template.md](runbook-template.md) is defined here. A placeholder left in a
+finished runbook is a defect: the verification step greps for `{{`.
 
 | Placeholder | Source | Example |
 | :-- | :-- | :-- |
 | `{{POST_TITLE}}` | preflight `title` | From Brief to Clickable Prototype in 48 Hours |
-| `{{POST_PATH}}` | the required parameter, repo-relative | content/blog/en/from-brief-to-….md |
-| `{{POST_URL}}` | preflight `url`, confirmed live | https://example.com/blog/from-brief-to-… |
+| `{{POST_PATH}}` | the required parameter, repo-relative | content/blog/en/from-brief-to-prototype.md |
+| `{{POST_URL}}` | preflight `url`, confirmed live | https://example.com/blog/from-brief-to-prototype |
 | `{{POST_WORDS}}` | preflight `word_count`, rounded to the nearest 50 | 1,000 |
 | `{{SHORT_SLUG}}` | preflight suggestion, shortened by hand to 2 or 3 words | prototype-48h |
 | `{{RUNBOOK_FILE}}` | `<channel>-ads-<short slug>.md` in the host's runbook folder | linkedin-ads-prototype-48h.md |
 | `{{TODAY}}` | today's date, ISO | 2026-09-21 |
 | `{{CURRENCY}}` | user input | PLN |
 | `{{MONTHLY_BUDGET}}` | user input | 3,000 |
-| `{{DAILY_BUDGET}}` | monthly ÷ 30, rounded down to a round number | 100 |
+| `{{DAILY_BUDGET}}` | monthly / 30, rounded down to a round number | 100 |
 | `{{RUN_WEEKS}}` | [strategy.md](strategy.md), default 8 | 8 |
-| `{{RUN_BUDGET}}` | daily × 7 × run weeks | 5,600 |
+| `{{RUN_BUDGET}}` | daily x 7 x run weeks | 5,600 |
 | `{{CAMPAIGN_COUNT}}` | [strategy.md](strategy.md) budget table | 1 |
 | `{{LIVE_ADS}}` | [strategy.md](strategy.md) impressions math | 3 |
 | `{{CPC_LOW}}`, `{{CPC_HIGH}}` | planning assumption or last post-mortem | 17, 40 |
-| `{{CLICKS_LOW}}`, `{{CLICKS_HIGH}}` | monthly ÷ CPC high, monthly ÷ CPC low | 75, 175 |
+| `{{CLICKS_LOW}}`, `{{CLICKS_HIGH}}` | monthly / CPC high, monthly / CPC low | 75, 175 |
 | `{{CONVERSION_NAME}}` | host probe: what the business calls it | brief |
 | `{{CONVERSION_PATH}}` | host probe | /brief |
 | `{{CONVERSION_FRICTION}}` | host probe: steps between click and conversion | email sign-in, then a 15 minute chat |

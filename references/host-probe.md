@@ -1,9 +1,8 @@
 # Host probe: what the site can and cannot measure
 
-A campaign runbook that assumes tracking works is how a team spends two months of
-budget and learns nothing. Probe the host before writing strategy. Every finding
-lands in the runbook's "What the site can and cannot measure today" table as a
-**fact and its consequence**, dated.
+A campaign runbook that assumes tracking works is how a team spends two months of budget and learns nothing.
+Probe the host before writing strategy. Every finding lands in the runbook's "What the site can and cannot
+measure today" table as a **fact and its consequence**, dated.
 
 ## What to find
 
@@ -38,12 +37,11 @@ curl -sI https://<site>/<post path> | grep -iE "^HTTP|content-security|permissio
 Code shows what should happen. A browser shows what does.
 
 1. Open the live post in a normal profile and accept marketing cookies.
-2. Confirm the vendor script loaded and a page-view request went out carrying the
-   expected account id. `performance.getEntriesByType("resource")` filtered by the
-   vendor host is enough.
+2. Confirm the vendor script loaded and a page-view request went out carrying the expected account id.
+   `performance.getEntriesByType("resource")` filtered by the vendor host is enough.
 3. Record the date of the check in the runbook.
 
-## Failure modes seen in production
+## Failure modes and what causes them
 
 | Symptom | Cause | What to do |
 | :-- | :-- | :-- |
@@ -62,10 +60,9 @@ Only when the user offers a signed-in session. Read, do not change:
 - Existing conversions: name, type, rule, status, id. Do not create duplicates.
 - Existing audiences and campaign groups that can be reused.
 
-Creating a conversion, audience or campaign changes the account and often carries an
-"by clicking Create you accept the advertising agreement" line. Fill the form, stop at
-the review step, show the user exactly what will be created, and let them confirm or
-click it themselves.
+Creating a conversion, audience or campaign changes the account and often carries an "by clicking Create you
+accept the advertising agreement" line. Fill the form, stop at the review step, show the user exactly what
+will be created, and let them confirm or click it themselves.
 
 ## Probe checklist
 
