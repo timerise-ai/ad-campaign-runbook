@@ -95,6 +95,12 @@ the skill stays cheap in context until a topic is actually needed.
 | `references/runbook-template.md` | The document to produce, with fixed section numbers and every placeholder |
 | `references/provenance.md` | The engineering ledger: what the audit changed and how the procedure holds it, what was kept on purpose, what was added here |
 | `assets/preflight.py` | Stdlib Python: enforces the required post and reports the measured facts the runbook is built from. Exit `2` means stop |
+| `README.md` | This file |
+| `CHANGELOG.md` | Release history, newest first |
+| `CLAUDE.md` | The editing conventions, for an agent editing this repository |
+| `LICENSE` | MIT |
+| `evals/` | The prompts an operator types after installing (`prompts.md`) and one file per agent eval: the skill installed into an empty Next.js app, one prompt carrying the post, no help, then type-checked, built and tested |
+| `.github/workflows/agent-eval.yml` | The caller of the index's reusable eval workflow, run on every published release and on a maintainer's dispatch |
 
 The seam is the table at the top of `references/adaptation.md`, and it is short because the deliverable is a
 document: the host provides a markdown post with an offer in it, an analytics vendor and a consent component,
@@ -102,6 +108,10 @@ a way to count the conversion outside the ad platform, and a folder for operatio
 word for the conversion, its funnel event names, its programme name and its runbook location are renamed
 through one table. The UTM parameter values are not renamed: they are the join key between the platform's
 numbers and the host's own data.
+
+The skill writes a document rather than code, so its evals score the agent against the hard rules, not the
+app: the checks only confirm the app was left intact, and the notes on each run carry the score. Two of the
+prompts give no usable post, and a run passes on those only when the agent stops and asks.
 
 ## The six non-negotiables
 

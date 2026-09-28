@@ -38,6 +38,14 @@ additions designed here that have never been run. That file is the rationale lay
   the pipeline; `runbook-template.md` is the document to produce; `provenance.md` is the audit ledger.
 - `assets/preflight.py`: the required-post check and the measured facts. Standard library only, so it runs in
   any host without an install step.
+- `evals/`: `prompts.md` holds what an operator types after installing, in their words, each carrying the
+  post it works on; the first prompt is the agent eval run before every release. Every other file there is
+  one eval run: measured frontmatter that is never edited, then the notes of the person who ran it, scored
+  against the hard rules. Add a prompt rather than rewording one that has results. The procedure is section
+  10 of the index's STANDARD.md.
+- `.github/workflows/agent-eval.yml`: the caller of the index's reusable eval workflow, run on every
+  published release and on a maintainer's dispatch. It is copied verbatim, the same in every skill, and was
+  set up by a maintainer; do not edit it, and never add a trigger on `push` or `pull_request`.
 
 ## Editing conventions
 
@@ -74,6 +82,9 @@ additions designed here that have never been run. That file is the rationale lay
 - **Mark additions as additions.** Anything designed in this skill and never run in the earlier
   implementation belongs in the "Added" section of `provenance.md`, stated as such. The skill's credibility
   is that it distinguishes the two.
+- **Evals are not skill content.** A new prompt or an eval result is committed as `chore(evals): ...`,
+  never causes a version bump and never rides in a release commit. The frontmatter of a result file is what
+  was measured and is not edited; a failing run stays committed, and the fix is the next release.
 - **Never present the non-negotiables as optional.** The required post file, claims traceable to the post,
   budgets and personal facts that are never invented, tracking that is probed rather than assumed, an ad
   account that is never changed without a yes, and a finished runbook with no placeholder and no stale fact

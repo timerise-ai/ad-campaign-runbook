@@ -42,6 +42,9 @@ summary. The preflight enforces it and exits `2` when the post is unusable:
 python3 <skill-dir>/assets/preflight.py <post.md> [--cta /path] [--site https://site]
 ```
 
+The post is a file in the repository and the live check reads the host's own site, so neither is an external
+service in an eval's sense. A post not yet deployed gets its live check recorded as not done, and a ticket.
+
 ## When to use
 
 - A post with a real offer in it should get paid LinkedIn traffic.
@@ -80,9 +83,8 @@ python3 <skill-dir>/assets/preflight.py <post.md> [--cta /path] [--site https://
    <channel>-ads-<short slug>.md in the host's runbook folder, audited, then added to the docs index
 ```
 
-The preflight is the only executable file and it reads the post, nothing else. The probe reads the host's
-code and one live page. Everything after it is written by the agent into one file whose section numbers are
-fixed, because the next post's runbook is a copy of this one and people cite sections by number.
+The preflight reads the post and nothing else; the probe reads the host's code and one live page. The rest is
+one file with fixed section numbers, because the next runbook is a copy of it and people cite them.
 
 ## Critical facts
 
@@ -133,17 +135,14 @@ fixed, because the next post's runbook is a copy of this one and people cite sec
    rules: [strategy.md](references/strategy.md)
 5. **Write the creative**: offer, proof points, angles, five ads, the organic post with author slots, landing
    page fixes: [creative.md](references/creative.md)
-6. **Specify tracking**: UTMs, conversions, the event code if the host lacks one, tickets:
-   [conversion-tracking.md](references/conversion-tracking.md)
+6. **Specify tracking**: UTMs, conversions, the event code if the host lacks one, tickets; implementing it,
+   when asked, follows the host's tests and lint: [conversion-tracking.md](references/conversion-tracking.md)
 7. **Write the build steps** with the host's names and UI language:
    [campaign-manager.md](references/campaign-manager.md)
 8. **Assemble the runbook** from the template, keeping the section numbers:
    [runbook-template.md](references/runbook-template.md)
 9. **Audit and verify**: traceability, 140-character hooks, no `{{`, then add the runbook to the host's docs
    index: [creative.md](references/creative.md) and [adaptation.md](references/adaptation.md)
-
-Implementing the conversion event in the host, when the probe finds none and the user asks for it, is a code
-change: follow the host's test and lint setup.
 
 ## Reference directory
 
