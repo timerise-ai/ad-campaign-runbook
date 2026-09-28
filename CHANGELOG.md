@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-09-28
+
+A wording release that brings the repository to the skill standard's eval
+requirements; the procedure, the references and the preflight are unchanged
+from 0.1.0.
+
+### Changed
+
+- `SKILL.md` states that the post file and the host's own site are not external
+  services in an eval's sense, and that a post not yet deployed gets its live
+  check recorded as not done, with a ticket. The note on implementing the
+  conversion event moved into quick-start step 6.
+- `README.md` lists every file in the repository, `evals/` and the eval
+  workflow, and says how the evals of a skill that writes no code are scored.
+- `CLAUDE.md` describes `evals/` and the eval workflow, and that evals are not
+  skill content.
+
 ## [0.1.0] - 2026-09-22
 
 Initial release of the `ad-campaign-runbook` skill: one blog post turned into a
