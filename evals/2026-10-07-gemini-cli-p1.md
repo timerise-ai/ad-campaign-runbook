@@ -86,3 +86,11 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/ad-campaign-runbook/actions/runs/37675453557
 ---
+
+Rubric 8/8, scored from the final summary. It plans two campaigns, with retargeting to `/signup` switched on at
+300 members, and records the live check as not done because there is no production domain. URLs are paths, and
+with no database the baseline is counted by hand. The qualified trial takes the default "Sales accepted it",
+and the cost ceiling is left open for Sales. The handover follows quick-start step 10 section by section: the
+tickets that block launch, the live check, both author slots quoted empty, 0 to 10 trials with zero called
+normal variance, and the open inputs. The runbook index and the link from `README.md` are allowed extras.
+Doubt: the ad names, the retargeting UTM values and the daily split are not quoted in the summary.

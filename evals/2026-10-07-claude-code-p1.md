@@ -86,3 +86,13 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/ad-campaign-runbook/actions/runs/37675453557
 ---
+
+Rubric 8/8, scored from the final summary. It plans two campaigns at 2,000 EUR. Retargeting is built in the
+setup week and switched on at 300 members, and until then the post campaign gets the full daily budget. The
+runbook uses paths because the production domain is unknown, and the live check is recorded as not done, with
+ticket T7. Nothing was wired into `npm test`, and the `tsconfig.json` that the build rewrote was put back. The
+handover covers every part of quick-start step 10: tickets T1 to T4 block launch, the author slots are empty,
+the range is 0 to 10 trials with zero called normal, and each open input is named. Not scored, since the skill
+is silent: retargeting is tagged `utm_campaign=retargeting-trial`, which the run flags as its own choice, and it
+runs at 20 EUR a day, under the 2.5 times the minimum that the budget formula assumes per campaign. Doubt: the
+ad names and any leftover `{{` are not quoted in the summary.
