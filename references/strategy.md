@@ -40,9 +40,17 @@ exchange rate moves.
 
 **A campaign whose audience is still filling is planned, not parked.** Retargeting cannot deliver until its
 audience has 300 matched members, so on a new account it starts empty. The runbook still counts it: built in
-the setup week with its ads, switched on at the first weekly check where the audience has passed 300, and until
-then its share of the daily budget stays with the post campaign. A runbook at this band that parks retargeting,
-or plans one campaign, has not followed the table.
+the setup week with its ads, switched on at the first weekly check where the audience has passed 300, and
+until then its share of the daily budget stays with the post campaign. A runbook at this band that parks
+retargeting, or plans one campaign, has not followed the table.
+
+**The split follows the same formula.** Every campaign that runs gets at least `2.5 * MIN_DAILY` a day, the
+floor the campaign count was derived from, and the post campaign takes the rest. A retargeting campaign below
+that floor cannot bid, so it is the post campaign's share that shrinks, not the floor.
+
+Retargeting is one campaign shared by every post, so it does not take a post's slug:
+`utm_campaign=retargeting`, and its ads are `RT-01` upward, with `utm_content=rt-01` (see
+[conversion-tracking.md](conversion-tracking.md)).
 
 **Worked example.** 3,000 PLN a month is about 700 EUR, so one campaign at 100 PLN a day. At a planned CPC of
 17 to 40 PLN that is 75 to 175 clicks; at 0.5% CTR, 15,000 to 35,000 impressions, so 3 live ads. At 1 to 3%

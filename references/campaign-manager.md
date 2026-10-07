@@ -85,7 +85,8 @@ is the reason to start now even when retargeting is parked.
    If spend stays under 60% of the daily budget for a week, raise the bid 10%. Switch to maximum delivery only
    if manual cannot spend.
 9. Conversion tracking: attach every conversion. They are for reporting; the objective stays traffic.
-10. Create one ad per launch creative. **Ad name = ad id** (`SI-01`). Destination URL = the full UTM URL.
+10. Create one ad per launch creative. **Ad name = ad id** (`SI-01`, or `RT-01` in retargeting). Destination
+    URL = the full UTM URL.
     Check the mobile preview: the hook must be readable before "see more".
 11. Ad rotation: **rotate evenly** until the mid-run review, then optimise for performance.
 12. Launch. Review usually takes under a day.

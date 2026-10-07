@@ -11,8 +11,8 @@ No code needed, and it must be identical across every post campaign so analytics
 ```
 utm_source=linkedin
 utm_medium=paid                     organic for the author's and the company page's posts
-utm_campaign=post-{short slug}      one value per blog post campaign
-utm_content={ad id, lowercase}     si-01 for the ad named SI-01, and so on, never reused
+utm_campaign=post-{short slug}      one value per blog post campaign; retargeting is utm_campaign=retargeting
+utm_content={ad id, lowercase}     si-01 for the ad named SI-01, rt-01 for RT-01, and so on, never reused
 ```
 
 Lowercase, hyphens, no spaces. The ad is named by its id in the platform (`SI-01`), and the `utm_content`

@@ -92,7 +92,9 @@ credibility is that it tells the two apart.
   platform minimum. Recompute the bands when the minimum or the exchange rate moves. The clause that a
   retargeting campaign whose audience is still under 300 members is planned, built and switched on when it
   passes them came from the 0.1.1 agent evals, where two agents of three parked it at 2,000 EUR. It has not
-  been run either.
+  been run either. So were the floor of 2.5 times the daily minimum for each running campaign, with the post
+  campaign taking the rest, and the retargeting campaign's own identifiers, `utm_campaign=retargeting` and the
+  ad ids `RT-01` upward: in the 0.1.2 runs, each agent tagged and funded retargeting its own way.
 - The generic identifiers in the conversion code. The shipped code used the host's own vocabulary; the
   generic version compiles under `strict` but has no history under those names.
 

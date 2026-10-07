@@ -141,8 +141,8 @@ one file with fixed section numbers, because the next runbook is a copy of it an
    [runbook-template.md](references/runbook-template.md)
 9. **Audit and verify**: traceability, 140-character hooks, no `{{`, then add the runbook to the host's docs
    index: [creative.md](references/creative.md) and [adaptation.md](references/adaptation.md)
-10. **Hand over** in the final message: what blocks launch and its tickets, whether the live check was done,
-   the empty author slots, the conversion range with zero in it, and every input assumed or left open
+10. **Hand over** in the final message, each named there and not left to the runbook: what blocks launch,
+   the live check, the empty author slots, the range with zero in it, every input assumed or left open
 
 ## Reference directory
 

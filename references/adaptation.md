@@ -32,7 +32,7 @@ the word appears, or in none.
 | conversion started, conversion completed | The host's two funnel moments, for example `brief_created` and `brief_submitted` | `FunnelConversion` members, conversion names, analytics event names |
 | post campaign | The host's programme name, for example "Blog posts" | Campaign group name, campaign names |
 | short slug | Two or three words of the post slug | `utm_campaign=post-<short slug>`, campaign name, runbook file name |
-| ad id | `SI-01` upward, one per ad, never reused | Ad name in the platform, `utm_content`, the tracking sheet |
+| ad id | `SI-01` upward, one per ad, never reused; `RT-01` upward for the shared retargeting campaign | Ad name in the platform, `utm_content`, the tracking sheet |
 | runbook file | `<channel>-ads-<short slug>.md` in the host's documents folder | The file this skill writes, and the post-mortem beside it |
 
 Names that are not renamed: the UTM parameter names, `utm_source=linkedin`, and `utm_medium=paid` or

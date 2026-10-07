@@ -59,9 +59,10 @@ additions designed here that have never been run. That file is the rationale lay
   markdown file and prints JSON. Exit `2` is the contract that makes the required argument enforceable, and
   `inputs.md` and `SKILL.md` both state it. Change one and change all three.
 - **Identifiers are shared across files.** `FunnelConversion`, `trackFunnelConversion`, `parseConsent`,
-  `claim`, `AD_PLATFORM_CONVERSION_IDS`, `CONSENT_STORAGE_KEY`, the ad ids `SI-01` upward, the UTM values
-  `utm_source=linkedin`, `utm_medium=paid`, `utm_campaign=post-<short slug>` and `utm_content=<ad id>`, and
-  every `{{PLACEHOLDER}}` name appear in several references. Rename in all of them or none.
+  `claim`, `AD_PLATFORM_CONVERSION_IDS`, `CONSENT_STORAGE_KEY`, the ad ids `SI-01` and `RT-01` upward, the UTM
+  values `utm_source=linkedin`, `utm_medium=paid`, `utm_campaign=post-<short slug>` or `retargeting` and
+  `utm_content=<ad id>`, and every `{{PLACEHOLDER}}` name appear in several references. Rename in all of them
+  or none.
 - **Keep the three tables in sync** with `references/` and `assets/`: the reference directory in `SKILL.md`,
   the quick-start list in `SKILL.md`, and the file table in `README.md`. Links are relative:
   `[x.md](references/x.md)` from `SKILL.md`, `[x.md](x.md)` between references.
