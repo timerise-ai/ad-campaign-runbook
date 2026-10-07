@@ -86,3 +86,11 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/ad-campaign-runbook/actions/runs/37678027400
 ---
+
+Rubric 8/8, scored from the final summary. It plans two campaigns. Retargeting is built in the setup week,
+switched on at 300 members, and then gets 25 EUR a day while the post campaign drops to 40, which is the floor
+of 2.5 times the minimum that 0.1.3 added. The live check is recorded as not done, with ticket T8, and the runbook
+uses paths. Nothing was wired into `npm test`, and the `tsconfig.json` that the build rewrote was put back. The
+final message names every handover item, including each assumed or open input one by one: the ad account, the
+planning numbers, the audience source, the language, the route guess, the qualified-trial default and the cost
+ceiling. Doubt: the summary does not quote the retargeting UTM values or the ad names.
