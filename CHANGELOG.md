@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-10-07
+
+A wording release, from scoring the prompt-1 agent eval runs of 0.1.3.
+
+### Changed
+
+- `SKILL.md` quick-start step 10: the final message ends with a list headed
+  *Open inputs*, one line per input. Pointing at the runbook's own list does
+  not count as the handover.
+
 ## [0.1.3] - 2026-10-07
 
 A fix release, from scoring the prompt-1 agent eval runs of 0.1.2.
