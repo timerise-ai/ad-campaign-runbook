@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-10-07
+
+A fix release, from scoring the prompt-1 agent eval runs of 0.1.2.
+
+### Changed
+
+- `SKILL.md` quick-start step 10: the final message names each handover item
+  itself, every open input included, instead of pointing at the runbook.
+- `references/strategy.md`: every running campaign gets at least
+  `2.5 * MIN_DAILY` a day, the floor the campaign count is derived from, and the
+  post campaign takes the rest.
+- `references/strategy.md`, `conversion-tracking.md`, `campaign-manager.md` and
+  `adaptation.md`: the shared retargeting campaign is tagged
+  `utm_campaign=retargeting`, and its ads are `RT-01` upward with
+  `utm_content=rt-01`. Both rules are recorded under *Added* in
+  `references/provenance.md`.
+
 ## [0.1.2] - 2026-10-07
 
 A fix release, from scoring the prompt-1 agent eval runs of 0.1.1 against a
