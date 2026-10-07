@@ -86,3 +86,10 @@ isolated: true
 timedOut: false
 runUrl: https://github.com/timerise-ai/ad-campaign-runbook/actions/runs/37680221734
 ---
+
+Rubric 8/8, scored from the final summary, which quotes what earlier summaries left as doubt. There are two
+campaigns, with ads `SI-01` to `SI-05` and `RT-01` to `RT-02`, and the UTMs are
+`utm_campaign=post-confirming-bookings&utm_content=si-01` and `utm_campaign=retargeting&utm_content=rt-01`.
+Retargeting is built and left off until the first Monday check past 300 members. Then it gets 25 EUR a day and
+the post campaign 40. URLs are paths, the live check is a ticket, the baseline is counted by hand, and nothing
+was wired into `npm test`. The final message ends with a list of the assumed and open inputs, one line each.
