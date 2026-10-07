@@ -97,7 +97,7 @@ is the reason to start now even when retargeting is parked.
 - [ ] Tag Active; conversions attached; any conversion ids deployed
 - [ ] Audience expansion unticked, Audience Network unticked
 - [ ] Exclusions attached, or noted as pending the 300-member minimum
-- [ ] Ad names equal `utm_content` values
+- [ ] Ad names equal `utm_content` values except for case (`SI-01`, `si-01`)
 - [ ] Cap, daily budget and end date set
 - [ ] Organic post live with the author's slots filled by the author; link in the first comment; colleagues
       briefed to comment across the first hour

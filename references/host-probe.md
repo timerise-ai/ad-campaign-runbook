@@ -41,6 +41,10 @@ Code shows what should happen. A browser shows what does.
    `performance.getEntriesByType("resource")` filtered by the vendor host is enough.
 3. Record the date of the check in the runbook.
 
+The live check reads production. A local dev server or a preview deployment is not the live page: a check
+against one is recorded as not done, and its URL never goes into the runbook. A post not yet deployed gets the
+check recorded as not done and a ticket to repeat it before launch.
+
 ## Failure modes and what causes them
 
 | Symptom | Cause | What to do |

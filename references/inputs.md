@@ -53,7 +53,7 @@ finished runbook is a defect: the verification step greps for `{{`.
 | :-- | :-- | :-- |
 | `{{POST_TITLE}}` | preflight `title` | From Brief to Clickable Prototype in 48 Hours |
 | `{{POST_PATH}}` | the required parameter, repo-relative | content/blog/en/from-brief-to-prototype.md |
-| `{{POST_URL}}` | preflight `url`, confirmed live | https://example.com/blog/from-brief-to-prototype |
+| `{{POST_URL}}` | preflight `url`, confirmed live. With no production domain known, the path, and the domain listed as open; never a localhost, dev-server or preview URL | https://example.com/blog/from-brief-to-prototype |
 | `{{POST_WORDS}}` | preflight `word_count`, rounded to the nearest 50 | 1,000 |
 | `{{SHORT_SLUG}}` | preflight suggestion, shortened by hand to 2 or 3 words | prototype-48h |
 | `{{RUNBOOK_FILE}}` | `<channel>-ads-<short slug>.md` in the host's runbook folder | linkedin-ads-prototype-48h.md |
@@ -84,7 +84,7 @@ finished runbook is a defect: the verification step greps for `{{`.
 | `{{ORGANIC_POST}}` | [creative.md](creative.md), with author slots | |
 | `{{LANDING_FIXES}}` | preflight warnings plus the probe | |
 | `{{AD_ACCOUNT}}` | user or a read of the account | Example Ltd, no. 123456789, PLN |
-| `{{BASELINE_QUERY}}` | host probe: how conversions are counted in the host's own data | SQL or a dashboard path |
+| `{{BASELINE_QUERY}}` | host probe: how conversions are counted in the host's own data. With no data store, section 8's count by hand, never a query against tables that do not exist | SQL or a dashboard path |
 | `{{NEXT_CANDIDATES}}` | two or three other posts whose text already contains an offer | |
 
 ## Input checklist

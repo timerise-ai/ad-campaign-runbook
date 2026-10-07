@@ -89,7 +89,10 @@ credibility is that it tells the two apart.
 - `assets/preflight.py`. The earlier implementation was read by hand. The script was run against that post
   afterwards and reported the same two landing page problems the hand reading had found.
 - The budget bands table in [strategy.md](strategy.md), generalised by arithmetic from one budget at one
-  platform minimum. Recompute the bands when the minimum or the exchange rate moves.
+  platform minimum. Recompute the bands when the minimum or the exchange rate moves. The clause that a
+  retargeting campaign whose audience is still under 300 members is planned, built and switched on when it
+  passes them came from the 0.1.1 agent evals, where two agents of three parked it at 2,000 EUR. It has not
+  been run either.
 - The generic identifiers in the conversion code. The shipped code used the host's own vocabulary; the
   generic version compiles under `strict` but has no history under those names.
 

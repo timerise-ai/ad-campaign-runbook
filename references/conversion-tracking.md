@@ -12,12 +12,12 @@ No code needed, and it must be identical across every post campaign so analytics
 utm_source=linkedin
 utm_medium=paid                     organic for the author's and the company page's posts
 utm_campaign=post-{short slug}      one value per blog post campaign
-utm_content={ad id}                 si-01, si-02 and so on, never reused; equals the ad's name in the platform
+utm_content={ad id, lowercase}     si-01 for the ad named SI-01, and so on, never reused
 ```
 
-Lowercase, hyphens, no spaces. The ad name in the platform, the `utm_content` value and the row in the
-tracking sheet are the same string. That equality is the only join key between the platform's numbers and the
-host's.
+Lowercase, hyphens, no spaces. The ad is named by its id in the platform (`SI-01`), and the `utm_content`
+value and the row in the tracking sheet are that id lowercased (`si-01`). That equality, ignoring case, is the
+only join key between the platform's numbers and the host's.
 
 ## Conversions to create
 

@@ -123,8 +123,9 @@ in `references/adaptation.md`, and carried by a checklist in the reference that 
 2. **Never write a claim the post does not make.** Every ad sentence names the post sentence it comes from,
    and the post's own caveats bind the ads. The creative audit drops what has no source.
 3. **Never invent a budget, a benchmark or a fact about the author.** Budgets come from the user, planning
-   numbers are labelled as assumptions until a post-mortem replaces them, and personal facts stay as slots
-   the author fills before publication.
+   numbers are labelled as assumptions until a post-mortem replaces them, personal facts stay as slots the
+   author fills before publication, and an input nobody gave takes its documented default and is listed as
+   open.
 4. **Never assume tracking works.** An installed tag records page views. The probe reads the code and one
    live page, dates its findings, and what is missing becomes a ticket rather than a promise.
 5. **Never change the ad account without an explicit yes for that action.** Reading a signed-in session is
@@ -150,6 +151,7 @@ the runbook and, when asked, the conversion event.
 | Not this | Use instead |
 |---|---|
 | Writing and publishing organic LinkedIn posts or comments | The `linkedin-marketing` skill. This skill drafts one companion post and hands it to that skill's audit |
+| Boosting a Company Page post (Engagement objective, link in the first comment) | The `linkedin-boost` skill |
 | Writing the blog post itself | `blog-markdown` and the host's content workflow. A post with no offer in it is not a paid candidate |
 | Meta, Google or X campaigns | Not covered. The build steps are LinkedIn's, and another channel needs its own minimums, objectives and formats established first |
 | Creating campaigns through an ads API | This skill produces a document for a human to execute in Campaign Manager |

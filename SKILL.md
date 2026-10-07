@@ -43,7 +43,9 @@ python3 <skill-dir>/assets/preflight.py <post.md> [--cta /path] [--site https://
 ```
 
 The post is a file in the repository and the live check reads the host's own site, so neither is an external
-service in an eval's sense. A post not yet deployed gets its live check recorded as not done, and a ticket.
+service in an eval's sense. A post not yet deployed gets its live check recorded as not done, and a ticket; a
+dev server is not the live site, and with no production domain the runbook's URLs are paths. The preflight
+checks the post and is not a test suite: nothing in the host's `package.json` or tests runs it.
 
 ## When to use
 
@@ -53,8 +55,8 @@ service in an eval's sense. A post not yet deployed gets its live check recorded
 
 ## When NOT to use
 
-- **Writing or publishing organic LinkedIn posts or comments**: the `linkedin-marketing` skill owns that.
-  This skill drafts one organic companion post and hands it to that skill's audit.
+- **Organic LinkedIn posts or comments**: `linkedin-marketing`. This drafts one companion post for its audit.
+- **Boosting a Company Page post (Engagement, link in the first comment)**: `linkedin-boost`.
 - **Writing the blog post itself**: `blog-markdown` and the host's content workflow.
 - **Meta, Google or X ads**: not covered, see [provenance.md](references/provenance.md).
 - **Creating campaigns through an ads API**: this produces a document for a human to execute.
@@ -66,17 +68,11 @@ service in an eval's sense. A post not yet deployed gets its live check recorded
 /ad-campaign-runbook <post.md> [budget]
         |
         +- assets/preflight.py ... required post, measured facts, landing warnings (exit 2: stop and ask)
-        |
         +- host probe ............ tag, consent, conversion events, UTMs, the path from click to conversion
-        |
         +- inputs, one batch ..... budget and currency, goals, countries, organic author, ad account
-        |
         +- strategy math ......... campaign count, live ads, clicks, conversion range, audience, decisions
-        |
         +- creative .............. offer, proof points, angles, five ads, organic post with author slots
-        |
         +- tracking spec ......... UTMs, conversions, the client-side event, engineering tickets
-        |
         +- build steps ........... Campaign Manager, once per account and once per post
         |
         v
@@ -89,7 +85,8 @@ one file with fixed section numbers, because the next runbook is a copy of it an
 ## Critical facts
 
 1. **Budget decides structure.** LinkedIn's daily minimum per campaign is about 10 USD. A monthly budget
-   under roughly 1,400 EUR funds one campaign properly, not a funnel.
+   under roughly 1,400 EUR funds one campaign, not a funnel; up to 2,100 EUR, two. Retargeting still under its
+   300 members is planned, built and switched on when it passes them, never parked.
 2. **An installed tag is not conversion tracking.** A base tag records page views. Check for a track call,
    UTM storage, consent gating and redirects that drop query strings before promising any measurement.
 3. **Small budgets produce 0 to 3 conversions a month.** Write that range down. Steer monthly by CTR, CPC and
@@ -112,7 +109,8 @@ one file with fixed section numbers, because the next runbook is a copy of it an
 > own caveats bind the ads.
 
 > **Never invent a budget, a benchmark or a fact about the author.** Budgets come from the user. Planning
-> numbers are labelled as assumptions. Personal facts in the organic post stay as slots for the author.
+> numbers are labelled as assumptions. Personal facts in the organic post stay as slots for the author. An
+> input nobody gave takes its default in [inputs.md](references/inputs.md) and is listed as open.
 
 > **Never assume tracking works.** Probe the code and the live page, date the findings, and list the gaps as
 > tickets.
@@ -143,6 +141,8 @@ one file with fixed section numbers, because the next runbook is a copy of it an
    [runbook-template.md](references/runbook-template.md)
 9. **Audit and verify**: traceability, 140-character hooks, no `{{`, then add the runbook to the host's docs
    index: [creative.md](references/creative.md) and [adaptation.md](references/adaptation.md)
+10. **Hand over** in the final message: what blocks launch and its tickets, whether the live check was done,
+   the empty author slots, the conversion range with zero in it, and every input assumed or left open
 
 ## Reference directory
 

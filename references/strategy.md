@@ -31,12 +31,18 @@ live_ads         = min(4, floor(impressions_low_per_month / 5000))   # each ad n
 | :-- | :-- | :-- |
 | under 350 | 0 | Do not run paid. Put the effort into the organic post and the page |
 | 350 to 1,400 | 1 | The post campaign only. Everything else is parked |
-| 1,400 to 2,100 | 2 | Add retargeting to the conversion page, shared across all post campaigns |
+| 1,400 to 2,100 | 2 | Add retargeting to the conversion page, shared across all post campaigns. Plan it from day 1 |
 | 2,100 to 3,500 | 3 | Add a sponsored version of the organic author's post |
 | over 3,500 | 3 or 4 | Split the cold audience, add higher-bid countries, carousel or video |
 
 The bands are arithmetic on the platform minimum, not benchmarks. Recompute them when the minimum or the
 exchange rate moves.
+
+**A campaign whose audience is still filling is planned, not parked.** Retargeting cannot deliver until its
+audience has 300 matched members, so on a new account it starts empty. The runbook still counts it: built in
+the setup week with its ads, switched on at the first weekly check where the audience has passed 300, and until
+then its share of the daily budget stays with the post campaign. A runbook at this band that parks retargeting,
+or plans one campaign, has not followed the table.
 
 **Worked example.** 3,000 PLN a month is about 700 EUR, so one campaign at 100 PLN a day. At a planned CPC of
 17 to 40 PLN that is 75 to 175 clicks; at 0.5% CTR, 15,000 to 35,000 impressions, so 3 live ads. At 1 to 3%
@@ -109,7 +115,7 @@ ad id and a new `utm_content`.
 
 ## Strategy checklist
 
-- [ ] Campaign count derived from the arithmetic, not from a funnel diagram
+- [ ] Campaign count derived from the arithmetic, not from a funnel diagram, a waiting audience included
 - [ ] Expected clicks and conversions per month stated as a range, zero included if it applies
 - [ ] Every planning number labelled as an assumption or sourced to a post-mortem
 - [ ] Audience traced to real customers; target size checked in the forecast panel
