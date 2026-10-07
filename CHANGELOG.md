@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-10-07
+
+A fix release, from scoring the prompt-1 agent eval runs of 0.1.1 against a
+fidelity rubric.
+
+### Fixed
+
+- `references/conversion-tracking.md` said the platform's ad name and
+  `utm_content` are the same lowercase string, while `creative.md` and
+  `campaign-manager.md` name the ad `SI-01`. All three now say the ad is named
+  `SI-01` and `utm_content` is `si-01`. A runbook that named its ads in
+  lowercase still joins, since the join ignores case.
+
+### Changed
+
+- `SKILL.md` critical fact 1 and `references/strategy.md`: from 1,400 to 2,100
+  EUR a month the runbook plans two campaigns. Retargeting whose audience is
+  still under 300 members is built in the setup week and switched on when the
+  audience passes 300. Until then its budget stays with the post campaign, and
+  it is never parked. Recorded under *Added* in `references/provenance.md`.
+- `SKILL.md`: a dev server is not the live site. With no production domain,
+  the runbook's URLs are paths, and `references/inputs.md` and
+  `references/host-probe.md` say the same. The preflight is not a test suite,
+  and nothing in the host's `package.json` or tests runs it.
+- `SKILL.md` hard rule 3 and the README's non-negotiable 3: an input nobody
+  gave takes its default from `references/inputs.md` and is listed as open. A
+  host with no data store gets the count by hand, never a query against tables
+  that do not exist.
+- `SKILL.md` quick-start step 10 lists what the final message tells the
+  operator: what blocks launch, whether the live check was done, the empty
+  author slots, the conversion range with zero in it, and every open input.
+- `SKILL.md` and the README point boosting a Company Page post at the
+  `linkedin-boost` skill.
+
 ## [0.1.1] - 2026-09-28
 
 A wording release that brings the repository to the skill standard's eval
